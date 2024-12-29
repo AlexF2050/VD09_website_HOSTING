@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Регистрация</h1>
+    <form method="post" action="{{ url_for('register')}}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.confirm_password.label(class="form-label") }}
+            {{ form.confirm_password(class="form-control") }}
+        </div>
+        <div class="form-group text-center">
+            {{ form.submit(class="btn btn-primary btn-lg") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
+<!--{% extends 'base.html' %}  {# Наследование структуры от базового шаблона base.html #}-->
+
+<!--{% block content %}  {# Открытие блока `content`, определенного в базовом шаблоне #}-->
+<!--<div class="container mt-5">  {# Создание контейнера с верхним отступом (mt-5 означает margin-top: 5rem) #}-->
+<!--    <h1 class="text-center mb-4">Регистрация</h1>  {# Заголовок с центром по горизонтали и нижним отступом (mb-4 означает margin-bottom: 4rem) #}-->
+<!--    <form method="post" action="{{ url_for('register')}}">  {# Форма отправки данных методом POST на маршрут register #}-->
+<!--        {{ form.hidden_tag() }}  {# Скрытое поле формы для защиты от CSRF атак #}-->
+<!--        <div class="form-group">  {# Группа полей формы #}-->
+<!--            {{ form.username.label(class="form-label") }}  {# Метка поля username с классом form-label #}-->
+<!--            {{ form.username(class="form-control") }}  {# Поле ввода имени пользователя с классом form-control #}-->
+<!--        </div>-->
+<!--        <div class="form-group">  {# Еще одна группа полей формы #}-->
+<!--            {{ form.password.label(class="form-label") }}  {# Метка поля пароля с классом form-label #}-->
+<!--            {{ form.password(class="form-control") }}  #{ Поле ввода пароля с классом form-control #}-->
+<!--        </div>-->
+<!--        <div class="form-group">  {# Третья группа полей формы #}-->
+<!--            {{ form.confirm_password.label(class="form-label") }}  {# Метка поля подтверждения пароля с классом form-label #}-->
+<!--            {{ form.confirm_password(class="form-control") }}  #{ Поле ввода подтверждения пароля с классом form-control #}-->
+<!--        </div>-->
+<!--        <div class="form-group text-center">  {# Группа полей формы с центрированным содержимым #}-->
+<!--            {{ form.submit(class="btn btn-primary btn-lg") }}  #{ Кнопка отправки формы с классами btn, btn-primary и btn-lg #}-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+<!--{% endblock %}  {# Закрытие блока `content` #}-->
