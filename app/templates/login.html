@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Вход</h1>
+    <h1 class="text-center mb-4">Вход в систему жизнеобеспечения</h1>
     <form method="post" action="{{ url_for('login')}}">
         {{ form.hidden_tag() }}
         <div class="form-group">

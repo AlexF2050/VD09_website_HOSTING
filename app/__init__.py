@@ -23,3 +23,4 @@ from app import routes, models                                  # Импорти
 # Flask-Login
 # Flask-WTF
 # Flask-Migrate
+# flask-bootstrap

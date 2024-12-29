@@ -9,7 +9,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url_for('index') }}">Игра</a>
+    <a class="navbar-brand" href="{{ url_for('index') }}">Игра длинною в жизнь!</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             {% if current_user.is_authenticated %}
@@ -42,10 +42,11 @@
         {% endif %}
     {% endwith %}
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
-    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
 </div>
 
 <!-- Подключение Bootstrap JS и зависимости -->
@@ -54,74 +55,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<!--Это шаблон страницы на языке HTML с использованием фреймворка Bootstrap 4. Страница включает в себя навигационную панель (навигацию), область контента и систему уведомлений.-->
-
-<!--Основные элементы:-->
-<!--Навигационная панель:-->
-<!--Логотип игры «Игра длинною в Жизнь» (ссылка на главную страницу).-->
-<!--Разделы для входа и регистрации, которые динамически меняются в зависимости от того, авторизован пользователь или нет.-->
-<!--Область уведомлений:-->
-<!--Используется для вывода сообщений об ошибках или уведомлениях пользователя (например, успешная регистрация, ошибки при входе и т.д.).-->
-<!--Контент:-->
-<!--Основная часть страницы, где будет размещен основной контент приложения. В данный момент это пустая область, которую можно заполнить через блоки шаблонов.-->
-<!--Подключенные библиотеки:-->
-<!--Используются стили и скрипты Bootstrap 4 для оформления и функциональности интерфейса.-->
-<!--Также подключены jQuery и Popper.js как зависимости для работы Bootstrap.-->
-
-<!--<!DOCTYPE html>  &lt;!&ndash; Объявление типа документа как HTML &ndash;&gt;-->
-<!--<html lang="en">  &lt;!&ndash; Начало HTML-документа с указанием языка (английский) &ndash;&gt;-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">  &lt;!&ndash; Указание кодировки символов UTF-8 &ndash;&gt;-->
-<!--    <title>Title</title>  &lt;!&ndash; Название страницы &ndash;&gt;-->
-<!--    &lt;!&ndash; Подключение Bootstrap CSS &ndash;&gt;-->
-<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  &lt;!&ndash; Подключение стилей Bootstrap &ndash;&gt;-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">  &lt;!&ndash; Навигационное меню &ndash;&gt;-->
-<!--    <a class="navbar-brand" href="{{ url_for('index') }}" style="color: red;">Игра длинною в Жизнь</a>  &lt;!&ndash; Логотип сайта со ссылкой на главную страницу &ndash;&gt;-->
-<!--    <div class="collapse navbar-collapse">  &lt;!&ndash; Контейнер для коллапсируемого меню &ndash;&gt;-->
-<!--        <ul class="navbar-nav ml-auto">  &lt;!&ndash; Список пунктов меню &ndash;&gt;-->
-<!--            {% if current_user.is_authenticated %}  &lt;!&ndash; Проверка, аутентифицирован ли текущий пользователь &ndash;&gt;-->
-<!--                <li class="nav-item">  &lt;!&ndash; Элемент списка &ndash;&gt;-->
-<!--                    <a class="nav-link" href="{{ url_for('logout') }}">Выход из аккаунта</a>  &lt;!&ndash; Ссылка на выход из аккаунта &ndash;&gt;-->
-<!--                </li>-->
-<!--            {% else %}  &lt;!&ndash; Если пользователь не аутентифицирован &ndash;&gt;-->
-<!--                <li class="nav-item">  &lt;!&ndash; Элемент списка &ndash;&gt;-->
-<!--                    <a class="nav-link" href="{{ url_for('login') }}">Вход в аккаунт</a>  &lt;!&ndash; Ссылка на вход в аккаунт &ndash;&gt;-->
-<!--                </li>-->
-<!--                <li class="nav-item">  &lt;!&ndash; Элемент списка &ndash;&gt;-->
-<!--                    <a class="nav-link" href="{{ url_for('register') }}">Регистрация</a>  &lt;!&ndash; Ссылка на регистрацию &ndash;&gt;-->
-<!--                </li>-->
-<!--            {% endif %}  &lt;!&ndash; Конец условия проверки аутентификации &ndash;&gt;-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-
-<!--<div class="container mt-4">  &lt;!&ndash; Основной контейнер страницы с отступами сверху &ndash;&gt;-->
-<!--    {% with messages = get_flashed_messages(with_categories=true) %}  &lt;!&ndash; Получение всех сообщений с категориями &ndash;&gt;-->
-<!--        {% if messages %}  &lt;!&ndash; Проверка наличия сообщений &ndash;&gt;-->
-<!--            {% for category, message in messages %}  &lt;!&ndash; Перебор всех сообщений &ndash;&gt;-->
-<!--                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">  &lt;!&ndash; Отображение сообщения с соответствующей категорией &ndash;&gt;-->
-<!--                    {{ message }}  &lt;!&ndash; Текст сообщения &ndash;&gt;-->
-<!--                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">  &lt;!&ndash; Кнопка закрытия сообщения &ndash;&gt;-->
-<!--                        <span aria-hidden="true">×</span>  &lt;!&ndash; Крестик для закрытия &ndash;&gt;-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--            {% endfor %}  &lt;!&ndash; Конец цикла перебора сообщений &ndash;&gt;-->
-<!--        {% endif %}  &lt;!&ndash; Конец проверки наличия сообщений &ndash;&gt;-->
-<!--    {% endwith %}  &lt;!&ndash; Конец получения сообщений &ndash;&gt;-->
-
-<!--    <div class="content">  &lt;!&ndash; Блок для основного контента страницы &ndash;&gt;-->
-<!--        {% block content %}  &lt;!&ndash; Место для вставки динамического контента &ndash;&gt;-->
-<!--        {% endblock %}  &lt;!&ndash; Конец блока для контента &ndash;&gt;-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Подключение Bootstrap JS и зависимостей &ndash;&gt;-->
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  &lt;!&ndash; Подключение jQuery &ndash;&gt;-->
-<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  &lt;!&ndash; Подключение Popper.js &ndash;&gt;-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  &lt;!&ndash; Подключение JavaScript-файлов Bootstrap &ndash;&gt;-->
-<!--</body>-->
-<!--</html>-->
