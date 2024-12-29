@@ -26,3 +26,4 @@ class LoginForm(FlaskForm):                                                     
 # Flask-Bcrypt
 # Flask-Login
 # Flask-WTF
+# Flask-Migrate

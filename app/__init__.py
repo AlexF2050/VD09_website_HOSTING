@@ -22,3 +22,4 @@ from app import routes, models                                  # Импорти
 # Flask-Bcrypt
 # Flask-Login
 # Flask-WTF
+# Flask-Migrate
